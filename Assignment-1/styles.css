@@ -1,0 +1,140 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+body {
+  font-family: Georgia;
+  padding: 0px;
+  background-color: #fffaed;
+  color: #4b3621;
+  font-size: 18px;
+}
+
+a {
+  color: #4b3621;
+}
+
+.table {
+  --bs-table-bg: #fffaed;
+  --bs-table-color: #654321;
+}
+
+main {
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-top: 200px;
+}
+
+h1 {
+  padding-top: 40px;
+  color: #58641d;
+  font-size: 46px;
+}
+
+.table th {
+  text-align: center;
+  font-size: 20px;
+  color: #654321;
+  background-color: #fffaed;
+}
+.table td {
+  text-align: center;
+  background-color: #fffaed;
+  color: #4b3621;
+  vertical-align: middle;
+}
+.table tr {
+  height: 60px;
+}
+
+#profile_picture {
+  position: absolute;
+  left: 50px;
+  width: 150px;
+  height: 100%;
+}
+
+aside button i {
+  margin-right: 8px;
+}
+
+h2 {
+  margin-bottom: 1px;
+  color: #58641d;
+}
+
+main {
+  float: right;
+  width: 80%;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  min-height: 100vh;
+}
+
+#center_content {
+  margin-top: 210px;
+}
+
+#center_content::after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 20px;
+  background: linear-gradient(to bottom, #fffaed, #e5d3b3);
+}
+
+header {
+  top: 0;
+  left: 0;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 200px;
+  background-color: #fffaed;
+  background-image: linear-gradient(to bottom, #fffaed, #fff5dd);
+}
+
+aside {
+  padding-top: 20px;
+  position: fixed;
+  float: left;
+  width: 20%;
+  display: block;
+}
+
+aside button {
+  display: block;
+  width: 80%;
+  margin: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #4b3621;
+  padding: 8px 10px;
+}
+
+footer {
+  clear: both;
+  width: 100%;
+  background-color: #e5d3b3;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 0.1px;
+}
+aside button.active-btn {
+  background: linear-gradient(to left, #fffaed, #fff5dd);
+  border-left: 4px solid #987554;
+}
+
+#mail_icon {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: #4b3621;
+}
