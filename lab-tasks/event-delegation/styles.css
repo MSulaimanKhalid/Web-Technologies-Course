@@ -1,0 +1,11 @@
+.taskItem {
+  background-color: #f2f2f2a9;
+  border: 1px solid #ccc;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.deleteBtn {
+  background-color: #ff4d4d;
+  float: right;
+}
