@@ -1,3 +1,5 @@
+<!-- N = 79, BP=679, H=193, hsl(193,70%,45%), K=4-->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -170,184 +172,272 @@
         </article>
       </template>
 
-      <section id="filtersBar">
-        <div id="searchInputDiv">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="search for a product..."
-          />
-          <button id="searchButton">
-            <img src="images/search.svg" alt="search icon" />
-          </button>
-        </div>
+      <!-- TASK 1: Inputs, filtersBar and productsList share one parent for ~.
+           The checkbox opens the menu; the five radios select a category.
+           Associated labels are displayed in the menu, while inputs stay here. -->
+      <div id="productCatalog">
+        <input
+          type="checkbox"
+          id="categoryMenuToggle"
+          class="category-control"
+          aria-label="Show category filters"
+          aria-controls="categoryMenu"
+        />
+        <input
+          type="radio"
+          id="category-all"
+          class="category-control category-radio"
+          name="product-category"
+          value="all"
+          aria-label="All"
+          aria-controls="productsList"
+          checked
+        />
+        <input
+          type="radio"
+          id="category-notebooks"
+          class="category-control category-radio"
+          name="product-category"
+          value="notebooks"
+          aria-label="Notebooks"
+          aria-controls="productsList"
+        />
+        <input
+          type="radio"
+          id="category-kits"
+          class="category-control category-radio"
+          name="product-category"
+          value="kits"
+          aria-label="Kits"
+          aria-controls="productsList"
+        />
+        <input
+          type="radio"
+          id="category-pens"
+          class="category-control category-radio"
+          name="product-category"
+          value="pens"
+          aria-label="Pens"
+          aria-controls="productsList"
+        />
+        <input
+          type="radio"
+          id="category-pencils"
+          class="category-control category-radio"
+          name="product-category"
+          value="pencils"
+          aria-label="Pencils"
+          aria-controls="productsList"
+        />
 
-        <button
-          id="productsFilter"
-          type="button"
-          class="form-control combobox-toggle"
-          data-bs-toggle="combobox"
-          data-bs-placeholder="Products"
-        >
-          <span>Products</span>
-          <svg
-            class="combobox-caret"
-            width="10"
-            height="16"
-            viewBox="0 0 10 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z"
-              fill="currentcolor"
+        <section id="filtersBar">
+          <div id="searchInputDiv">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="search for a product..."
             />
-          </svg>
-        </button>
-        <div id="productsSelectList" class="menu">
-          <button class="menu-item" type="button" data-bs-value="all-products">
-            ALL PRODUCTS
-          </button>
-          <button
-            class="menu-item"
-            type="button"
-            data-bs-value="seasonal-editions"
-          >
-            SEASONAL EDITIONS
-          </button>
-          <button class="menu-item" type="button" data-bs-value="memo-books">
-            MEMO BOOKS
-          </button>
-          <button
-            class="menu-item"
-            type="button"
-            data-bs-value="pens-and-pencils"
-          >
-            PENS AND PENCILS
-          </button>
-          <button
-            class="menu-item"
-            type="button"
-            data-bs-value="planners-and-calendars"
-          >
-            PLANNERS AND CALENDARS
-          </button>
-          <button
-            class="menu-item"
-            type="button"
-            data-bs-value="leather-covers"
-          >
-            LEATHER COVERS
-          </button>
-          <button class="menu-item" type="button" data-bs-value="press-sheets">
-            PRESS SHEETS
-          </button>
-          <button class="menu-item" type="button" data-bs-value="kits">
-            KITS
-          </button>
-        </div>
+            <button id="searchButton">
+              <img src="images/search.svg" alt="search icon" />
+            </button>
+          </div>
 
-        <button
-          id="paperStylesFilter"
-          type="button"
-          class="form-control combobox-toggle"
-          data-bs-toggle="combobox"
-          data-bs-placeholder="Paper Styles"
-        >
-          <span>Paper Styles</span>
-          <svg
-            class="combobox-caret"
-            width="10"
-            height="16"
-            viewBox="0 0 10 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z"
-              fill="currentcolor"
-            />
-          </svg>
-        </button>
-        <div id="paperStyleList" class="menu">
           <button
-            class="menu-item"
+            id="productsFilter"
             type="button"
-            data-bs-value="all-paper-styles"
+            class="form-control combobox-toggle"
+            data-bs-toggle="combobox"
+            data-bs-placeholder="Products"
           >
-            ALL PAPER STYLES
+            <span>Products</span>
+            <svg
+              class="combobox-caret"
+              width="10"
+              height="16"
+              viewBox="0 0 10 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z"
+                fill="currentcolor"
+              />
+            </svg>
           </button>
-          <button class="menu-item" type="button" data-bs-value="graph">
-            GRAPH
-          </button>
-          <button class="menu-item" type="button" data-bs-value="ruled">
-            RULED
-          </button>
-          <button class="menu-item" type="button" data-bs-value="plain">
-            PLAIN
-          </button>
-          <button class="menu-item" type="button" data-bs-value="dot-graph">
-            DOT-GRAPH
-          </button>
-          <button class="menu-item" type="button" data-bs-value="ledger">
-            LEDGER
-          </button>
-          <button class="menu-item" type="button" data-bs-value="checklist">
-            CHECKLIST
-          </button>
-          <button class="menu-item" type="button" data-bs-value="planner">
-            PLANNER
-          </button>
-        </div>
+          <div id="productsSelectList" class="menu">
+            <button
+              class="menu-item"
+              type="button"
+              data-bs-value="all-products"
+            >
+              ALL PRODUCTS
+            </button>
+            <button
+              class="menu-item"
+              type="button"
+              data-bs-value="seasonal-editions"
+            >
+              SEASONAL EDITIONS
+            </button>
+            <button class="menu-item" type="button" data-bs-value="memo-books">
+              MEMO BOOKS
+            </button>
+            <button
+              class="menu-item"
+              type="button"
+              data-bs-value="pens-and-pencils"
+            >
+              PENS AND PENCILS
+            </button>
+            <button
+              class="menu-item"
+              type="button"
+              data-bs-value="planners-and-calendars"
+            >
+              PLANNERS AND CALENDARS
+            </button>
+            <button
+              class="menu-item"
+              type="button"
+              data-bs-value="leather-covers"
+            >
+              LEATHER COVERS
+            </button>
+            <button
+              class="menu-item"
+              type="button"
+              data-bs-value="press-sheets"
+            >
+              PRESS SHEETS
+            </button>
+            <button class="menu-item" type="button" data-bs-value="kits">
+              KITS
+            </button>
+          </div>
 
-        <button
-          id="paperSizesFilter"
-          type="button"
-          class="form-control combobox-toggle"
-          data-bs-toggle="combobox"
-          data-bs-placeholder="Paper Sizes"
-        >
-          <span>Paper Sizes</span>
-          <svg
-            class="combobox-caret"
-            width="10"
-            height="16"
-            viewBox="0 0 10 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            id="paperStylesFilter"
+            type="button"
+            class="form-control combobox-toggle"
+            data-bs-toggle="combobox"
+            data-bs-placeholder="Paper Styles"
           >
-            <path
-              d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z"
-              fill="currentcolor"
-            />
-          </svg>
-        </button>
-        <div id="paperSizeList" class="menu">
-          <button class="menu-item" type="button" data-bs-value="all-sizes">
-            ALL SIZES
+            <span>Paper Styles</span>
+            <svg
+              class="combobox-caret"
+              width="10"
+              height="16"
+              viewBox="0 0 10 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z"
+                fill="currentcolor"
+              />
+            </svg>
           </button>
-          <button class="menu-item" type="button" data-bs-value="3.5x5.5">
-            3.5×5.5" (89×140 mm)
-          </button>
-          <button class="menu-item" type="button" data-bs-value="3.75x8">
-            3.75×8" (95×203 mm)
-          </button>
-          <button class="menu-item" type="button" data-bs-value="4.25x6.5">
-            4.25×6.5" (108×165 mm)
-          </button>
-          <button class="menu-item" type="button" data-bs-value="4.75x7.5">
-            4.75×7.5" (120×190 mm)
-          </button>
-          <button class="menu-item" type="button" data-bs-value="6x8">
-            6×8" (152×203 mm)
-          </button>
-          <button class="menu-item" type="button" data-bs-value="6x9">
-            6×9" (152×228 mm)
-          </button>
-        </div>
-      </section>
+          <div id="paperStyleList" class="menu">
+            <button
+              class="menu-item"
+              type="button"
+              data-bs-value="all-paper-styles"
+            >
+              ALL PAPER STYLES
+            </button>
+            <button class="menu-item" type="button" data-bs-value="graph">
+              GRAPH
+            </button>
+            <button class="menu-item" type="button" data-bs-value="ruled">
+              RULED
+            </button>
+            <button class="menu-item" type="button" data-bs-value="plain">
+              PLAIN
+            </button>
+            <button class="menu-item" type="button" data-bs-value="dot-graph">
+              DOT-GRAPH
+            </button>
+            <button class="menu-item" type="button" data-bs-value="ledger">
+              LEDGER
+            </button>
+            <button class="menu-item" type="button" data-bs-value="checklist">
+              CHECKLIST
+            </button>
+            <button class="menu-item" type="button" data-bs-value="planner">
+              PLANNER
+            </button>
+          </div>
 
-      <section id="productsList"></section>
+          <button
+            id="paperSizesFilter"
+            type="button"
+            class="form-control combobox-toggle"
+            data-bs-toggle="combobox"
+            data-bs-placeholder="Paper Sizes"
+          >
+            <span>Paper Sizes</span>
+            <svg
+              class="combobox-caret"
+              width="10"
+              height="16"
+              viewBox="0 0 10 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z"
+                fill="currentcolor"
+              />
+            </svg>
+          </button>
+          <div id="paperSizeList" class="menu">
+            <button class="menu-item" type="button" data-bs-value="all-sizes">
+              ALL SIZES
+            </button>
+            <button class="menu-item" type="button" data-bs-value="3.5x5.5">
+              3.5×5.5" (89×140 mm)
+            </button>
+            <button class="menu-item" type="button" data-bs-value="3.75x8">
+              3.75×8" (95×203 mm)
+            </button>
+            <button class="menu-item" type="button" data-bs-value="4.25x6.5">
+              4.25×6.5" (108×165 mm)
+            </button>
+            <button class="menu-item" type="button" data-bs-value="4.75x7.5">
+              4.75×7.5" (120×190 mm)
+            </button>
+            <button class="menu-item" type="button" data-bs-value="6x8">
+              6×8" (152×203 mm)
+            </button>
+            <button class="menu-item" type="button" data-bs-value="6x9">
+              6×9" (152×228 mm)
+            </button>
+          </div>
+          <!-- TASK 1: A label styled as a button toggles the checkbox without JS.
+             The menu stays open until Category Filter is activated again. -->
+          <div class="categoryDropdown">
+            <label id="categoryFilter" for="categoryMenuToggle">
+              Category Filter
+              <span class="categoryCaret" aria-hidden="true">▾</span>
+            </label>
+            <div id="categoryMenu">
+              <p class="categoryMenuTitle">Choose a category</p>
+              <label class="categoryOption" for="category-all">All</label>
+              <label class="categoryOption" for="category-notebooks"
+                >Notebooks</label
+              >
+              <label class="categoryOption" for="category-kits">Kits</label>
+              <label class="categoryOption" for="category-pens">Pens</label>
+              <label class="categoryOption" for="category-pencils"
+                >Pencils</label
+              >
+            </div>
+          </div>
+        </section>
+
+        <section id="productsList" aria-label="Products"></section>
+      </div>
+      <!-- TASK 1: end shared sibling container -->
 
       <template id="productCardTemplate">
         <article class="productCard">

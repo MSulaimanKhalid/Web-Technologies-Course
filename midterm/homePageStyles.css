@@ -1,4 +1,6 @@
 :root {
+  /* TASK 1: N=79, H=193, K=4. BP=679px is used in the media query below. */
+  --accent-color: hsl(193, 70%, 45%);
   --light-gray: #949494;
   --drawer-background-color: #2f2c2b;
 }
@@ -56,7 +58,8 @@ header {
 #filtersBar {
   margin-top: 3vh;
   display: grid;
-  grid-template-columns: repeat(2, 1) fr;
+  /* TASK 1: Correct the invalid repeat(2, 1) fr declaration. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   min-height: 20vh;
   place-items: center;
 }
@@ -292,7 +295,8 @@ button {
   color: #a83b12;
 }
 
-@media (min-width: 768px) {
+/* TASK 1: Personal breakpoint BP = 600 + 79 = 679px (inclusive). */
+@media (min-width: 679px) {
   #productsList {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -353,5 +357,218 @@ button {
   footer #newsletterSection {
     grid-column: 3;
     grid-row: 1;
+  }
+}
+
+/* TASK 1: Shared parent keeps the actual inputs before the grid for ~.
+   Visually clipping preserves native checkbox/radio keyboard behaviour. */
+#productCatalog {
+  position: relative;
+  min-width: 0;
+}
+.category-control {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+/* Closed menu options must not remain in the keyboard tab order. */
+.category-radio {
+  display: none;
+}
+#categoryMenuToggle:checked ~ .category-radio {
+  display: block;
+}
+
+/* TASK 1: Mobile first: search on row 1, then four controls in two columns.
+   Direct-child selectors avoid changing the buttons INSIDE Bootstrap menus. */
+#filtersBar {
+  min-height: 0;
+  margin: 0;
+  padding: 24px 16px;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto;
+  align-items: center;
+}
+#filtersBar > #searchInputDiv {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  box-sizing: border-box;
+}
+#searchInput {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+}
+#searchInputDiv button {
+  flex: none;
+  float: none;
+}
+#filtersBar > button,
+#filtersBar > .categoryDropdown {
+  grid-column: auto;
+  grid-row: auto;
+  min-width: 0;
+  max-width: 100%;
+  justify-self: center;
+}
+.categoryDropdown {
+  position: relative;
+}
+#categoryFilter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  background: white;
+  color: #303030;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#categoryMenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 208px;
+  max-width: calc(100vw - 32px);
+  padding: 8px;
+  background: white;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 15%);
+  z-index: 10;
+}
+#categoryMenuToggle:checked ~ #filtersBar #categoryMenu {
+  display: block;
+}
+#categoryMenuToggle:checked ~ #filtersBar .categoryCaret {
+  transform: rotate(180deg);
+}
+.categoryMenuTitle {
+  margin: 4px 8px 8px;
+  font-size: 0.85rem;
+}
+.categoryOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #303030;
+}
+/* The circle visually represents the real, associated radio input. */
+.categoryOption::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  flex: none;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+.categoryOption:hover {
+  background: #edf5f7;
+}
+/* TASK 1: Selected option uses H=193. Dark text contrasts with the accent. */
+#category-all:checked ~ #filtersBar label[for="category-all"],
+#category-notebooks:checked ~ #filtersBar label[for="category-notebooks"],
+#category-kits:checked ~ #filtersBar label[for="category-kits"],
+#category-pens:checked ~ #filtersBar label[for="category-pens"],
+#category-pencils:checked ~ #filtersBar label[for="category-pencils"] {
+  background: var(--accent-color);
+  color: #102329;
+  font-weight: 700;
+}
+
+#category-all:focus-visible ~ #filtersBar label[for="category-all"],
+#category-notebooks:focus-visible ~ #filtersBar label[for="category-notebooks"],
+#category-kits:focus-visible ~ #filtersBar label[for="category-kits"],
+#category-pens:focus-visible ~ #filtersBar label[for="category-pens"],
+#category-pencils:focus-visible ~ #filtersBar label[for="category-pencils"] {
+  outline: 3px solid #102329;
+  outline-offset: 2px;
+}
+
+#category-all:checked ~ #filtersBar label[for="category-all"]::before,
+#category-notebooks:checked
+  ~ #filtersBar
+  label[for="category-notebooks"]::before,
+#category-kits:checked ~ #filtersBar label[for="category-kits"]::before,
+#category-pens:checked ~ #filtersBar label[for="category-pens"]::before,
+#category-pencils:checked ~ #filtersBar label[for="category-pencils"]::before {
+  background: currentColor;
+  box-shadow: inset 0 0 0 3px var(--accent-color);
+}
+
+#categoryMenuToggle:focus-visible ~ #filtersBar #categoryFilter {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* TASK 1: ~ reaches the following grid; :not() selects nonmatching cards.
+   display:none removes them from grid layout, so no empty cells remain.
+   All needs no hide rule: with All selected, none of these rules match. */
+#category-notebooks:checked
+  ~ #productsList
+  .productCard:not([data-category="notebooks"]),
+#category-kits:checked ~ #productsList .productCard:not([data-category="kits"]),
+#category-pens:checked ~ #productsList .productCard:not([data-category="pens"]),
+#category-pencils:checked
+  ~ #productsList
+  .productCard:not([data-category="pencils"]) {
+  display: none;
+}
+
+/* TASK 1: Keep cards shrinkable and header above the dropdown. */
+header {
+  z-index: 20;
+}
+.productCard {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#productsList {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* TASK 1: Exactly 679px enters this layout: search then four filter controls. */
+@media (min-width: 679px) {
+  #filtersBar {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  #productsList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* TASK 1: Wide layout fits search + four controls without the old 70vw minimum. */
+@media (min-width: 1200px) {
+  #filtersBar {
+    display: flex;
+    justify-content: space-between;
+  }
+  #filtersBar > #searchInputDiv {
+    flex: 1;
+    max-width: 440px;
+  }
+  #filtersBar > button,
+  #filtersBar > .categoryDropdown {
+    flex: none;
+  }
+  #productsList {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

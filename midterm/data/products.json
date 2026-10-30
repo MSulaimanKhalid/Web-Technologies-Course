@@ -2,61 +2,73 @@
   {
     "title": "HUNTER’S MOON",
     "price": "Rs. 1495",
-    "image": "product-hunters-moon.png"
+    "image": "product-hunters-moon.png",
+    "category": "notebooks"
   },
   {
     "title": "ORIGINAL KRAFT",
     "price": "Rs. 1295",
-    "image": "product-original-kraft.png"
+    "image": "product-original-kraft.png",
+    "category": "notebooks"
   },
   {
     "title": "NATIONAL PARKS",
     "price": "Rs. 1495",
-    "image": "product-national-parks.png"
+    "image": "product-national-parks.png",
+    "category": "notebooks"
   },
   {
     "title": "EXPLORE AMERICA",
     "price": "Rs. 1495",
-    "image": "product-explore-america.png"
+    "image": "product-explore-america.png",
+    "category": "notebooks"
   },
   {
     "title": "BIRDS AND TREES OF NORTH AMERICA",
     "price": "Rs. 1495",
-    "image": "product-birds-and-trees.png"
+    "image": "product-birds-and-trees.png",
+    "category": "notebooks"
   },
   {
     "title": "PALETAS",
     "price": "Rs. 1495",
-    "image": "product-paletas.png"
+    "image": "product-paletas.png",
+    "category": "notebooks"
   },
   {
     "title": "1943",
     "price": "Rs. 1495",
-    "image": "product-1943.png"
+    "image": "product-1943.png",
+    "category": "notebooks"
   },
   {
     "title": "EXPEDITION",
     "price": "Rs. 1495",
-    "image": "product-expedition.png"
+    "image": "product-expedition.png",
+    "category": "notebooks"
   },
   {
     "title": "STARTER KIT",
     "price": "Rs. 2495",
-    "image": "product-starter-kit.png"
+    "image": "product-starter-kit.png",
+    "category": "kits"
   },
   {
     "title": "DESK KIT",
     "price": "Rs. 1795",
-    "image": "product-desk-kit.png"
+    "image": "product-desk-kit.png",
+    "category": "kits"
   },
   {
     "title": "SPACE PEN",
     "price": "Rs. 3995",
-    "image": "product-space-pen.png"
+    "image": "product-space-pen.png",
+    "category": "pens"
   },
   {
     "title": "NO. 2 WOODGRAIN PENCIL 6-PACK",
     "price": "Rs. 995",
-    "image": "product-woodgrain-pencils.png"
+    "image": "product-woodgrain-pencils.png",
+    "category": "pencils"
   }
 ]

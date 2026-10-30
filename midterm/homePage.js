@@ -35,6 +35,11 @@ async function loadProducts() {
     for (const product of products) {
       const clone = template.content.cloneNode(true);
 
+      // TASK 1: Copy the JSON category onto the card for CSS attribute selectors.
+      // This only labels the card; CSS handles every filter selection (no listeners).
+      const card = clone.querySelector(".productCard");
+      card.dataset.category = product.category;
+
       const image = clone.querySelector(".productImage");
       image.src = `./images/${product.image}`;
       image.alt = product.title;
