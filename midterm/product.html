@@ -135,213 +135,230 @@
         </div>
       </section>
 
+      <!-- TASK 2: Named areas place the gallery, details column and description. -->
       <article id="productCard">
-        <img
-          id="productImage"
-          src="images/product-hunters-moon.png"
-          alt="Hunter’s Moon notebook with an illustrated cream, gray and ochre cover"
-        />
-        <section id="productDetails">
-          <p class="productEdition">FALL 2026 QUARTERLY EDITION</p>
-          <h2>HUNTER’S MOON</h2>
-          <p class="productPacks">2-PACKS</p>
-          <hr />
-          <p class="productInfo">
-            4¾&quot; × 7½&quot; · Sketch &amp; Ruled Paper · 48 Pages
-          </p>
-          <p class="productPrice">Rs. 1495</p>
+        <div id="productGallery">
+          <img
+            id="productImage"
+            src="images/product-hunters-moon.png"
+            alt="Hunter’s Moon notebook with an illustrated cream, gray and ochre cover"
+          />
+          <!-- TASK 2: Existing detail photos give the sticky box room to travel, even at BP. -->
+          <img
+            src="images/hunters-moon-covers.png"
+            alt="Unfolded Hunter’s Moon notebook covers"
+          />
+          <img
+            src="images/hunters-moon-paper.png"
+            alt="A closer look at the notebook’s ruled paper"
+          />
+        </div>
+        <!-- TASK 2: This column sets the boundary for the sticky details box. -->
+        <div id="detailsColumn">
+          <section id="productDetails">
+            <p class="productEdition">FALL 2026 QUARTERLY EDITION</p>
+            <h2>HUNTER’S MOON</h2>
+            <p class="productPacks">2-PACKS</p>
+            <hr />
+            <p class="productInfo">
+              4¾&quot; × 7½&quot; · Sketch &amp; Ruled Paper · 48 Pages
+            </p>
+            <p class="productPrice">Rs. 1495</p>
 
-          <div class="productOptions">
-            <button
-              id="productOption"
-              class="form-control combobox-toggle"
-              type="button"
-              data-bs-toggle="combobox"
-              data-bs-name="product-option"
-              data-bs-placeholder="Choose an Option …"
-              aria-label="Choose a product option"
-            >
-              <span class="combobox-value">Choose an Option …</span>
-              <svg
-                class="combobox-caret"
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="m2 4 4 4 4-4"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </button>
-            <div class="menu">
+            <div class="productOptions">
               <button
-                class="menu-item"
+                id="productOption"
+                class="form-control combobox-toggle"
                 type="button"
-                data-bs-value="hunters-moon-2-pack"
+                data-bs-toggle="combobox"
+                data-bs-name="product-option"
+                data-bs-placeholder="Choose an Option …"
+                aria-label="Choose a product option"
               >
-                Hunter’s Moon 2-Pack
+                <span class="combobox-value">Choose an Option …</span>
+                <svg
+                  class="combobox-caret"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="m2 4 4 4 4-4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
               </button>
-              <button
-                class="menu-item"
-                type="button"
-                data-bs-value="year-long-subscription"
-              >
-                Year-Long Subscription
-              </button>
+              <div class="menu">
+                <button
+                  class="menu-item"
+                  type="button"
+                  data-bs-value="hunters-moon-2-pack"
+                >
+                  Hunter’s Moon 2-Pack
+                </button>
+                <button
+                  class="menu-item"
+                  type="button"
+                  data-bs-value="year-long-subscription"
+                >
+                  Year-Long Subscription
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div class="purchaseControls">
-            <div class="quantityControl">
-              <label for="quantityInput">QTY</label>
-              <input
-                id="quantityInput"
-                name="quantity"
-                type="number"
-                min="1"
-                step="1"
-                value="1"
+            <div class="purchaseControls">
+              <div class="quantityControl">
+                <label for="quantityInput">QTY</label>
+                <input
+                  id="quantityInput"
+                  name="quantity"
+                  type="number"
+                  min="1"
+                  step="1"
+                  value="1"
+                />
+              </div>
+              <button id="addToCartButton" type="button">ADD TO CART</button>
+            </div>
+          </section>
+        </div>
+
+        <!-- TASK 2: Description and specifications now belong to the same grid. -->
+        <div id="productInformation">
+          <section id="description">
+            <div id="para1" class="descriptionPara">
+              <h2>RISING</h2>
+              <p>
+                Our 72nd quarterly edition for the Fall of 2026 is “Hunter’s
+                Moon,” named for the first full moon after the harvest. Known
+                for the bright and warm light it casts on newly gleaned fields,
+                the appearance of the Hunter’s Moon serves as a mindful call to
+                prepare for the quieter months ahead. Light a candle and fill
+                the pages of this 2-Pack, that includes a journal and
+                sketchbook, with your autumnal words and images.
+              </p>
+              <img
+                src="images/hunters-moon-studio.png"
+                alt="An artist working at a desk beside a studio window"
               />
             </div>
-            <button id="addToCartButton" type="button">ADD TO CART</button>
-          </div>
-        </section>
+            <div id="para2" class="descriptionPara">
+              <h3>BETWEEN MEMORIES AND THOUGHTS</h3>
+              <p>
+                Inspired in part by Ted Kooser’s lovely poem, “Abandoned House,”
+                artist Laura Weiler created the dream-like artwork for the
+                covers using a unique gel plate method of monoprinting, layering
+                collaged images, inks, and paints that are pressed and then
+                transferred to paper. We visited her home studio in Kalamazoo,
+                Michigan to learn more about her inspiration and process and to
+                capture the creation of the fall cover art.
+              </p>
+              <img
+                src="images/hunters-moon-covers.png"
+                alt="Two unfolded Hunter’s Moon covers showing architectural and chair illustrations"
+              />
+            </div>
+            <div id="para3" class="descriptionPara">
+              <h3>VISIONS INTERPRETED</h3>
+              <p>
+                Split evenly across the two large (4.75&quot; × 7.5&quot;)
+                books, Weiler’s artwork is reproduced on sturdy 100#C Mohawk
+                Superfine stock. The inside covers contain custom practical
+                applications and all the information you need to know about
+                dreams, consciousness, and memories.
+              </p>
+              <img
+                class="detailImage"
+                src="images/hunters-moon-paper.png"
+                alt="Warm white notebook pages with fine ochre ruling"
+                loading="lazy"
+              />
+            </div>
+            <div id="para4" class="descriptionPara">
+              <p>
+                Three black staples bind 48 pages of Mohawk Superfine “Warm
+                White” 70#T, an excellent premium paper that is ideal for
+                writing and artwork across a variety of media. One book is ruled
+                with light ochre lines for journaling and the other is blank for
+                sketching.
+              </p>
+              <img
+                class="buttonsImage"
+                src="images/hunters-moon-buttons.png"
+                alt="Three illustrated pinback buttons with bird and moon designs"
+                loading="lazy"
+              />
+            </div>
+            <div id="para5" class="descriptionPara">
+              <h3>TO EVERY SEASON</h3>
+              <p>
+                Start a year-long subscription with “Hunter’s Moon” and receive
+                two 2-packs plus a set of three 1&quot; buttons. Pin them onto
+                your favorite denim jacket, tote bag, or pencil pouch.
+              </p>
+              <p>
+                Subscribers will receive their first shipment in our special
+                2026 Subscriber Box by artist Jennifer Farrell of Starshaped
+                Press. Then get multiple sets of the Winter, Spring, and Summer
+                (Our 75th!) editions, with free USA shipping and exclusive bonus
+                items, as they are released. Remember, subscribers also
+                automagically save 10% when shopping on our site. More
+                information on subscriptions here.
+              </p>
+            </div>
+          </section>
+
+          <section id="specifications">
+            <h3>SPECIFICATIONS:</h3>
+            <ol>
+              <li>Ethereal artwork by Laura Weiler, cutandplaced.com</li>
+              <li>
+                Proudly printed by the good people of Classic Color, Broadview,
+                Ill.
+              </li>
+              <li>
+                Cover: Mohawk Via Vellum 100#C “Warm White,” with a four-color
+                application of soy-based inks.
+              </li>
+              <li>
+                Innards: Mohawk Via Vellum 70#T “Warm White,” with a fine,
+                one-color application of “Moonlit Rust” soy-based Superior ink.
+              </li>
+              <li>
+                Cover and innards printed on a Komori Lithrone G40&quot;
+                six-color printing press.
+              </li>
+              <li>
+                Bound with a Muller Martini Presto II saddle stitcher with
+                appreciation to Slocum, McGill, and Brown, the “Founding Fathers
+                of the Staple.”
+              </li>
+              <li>Corners precisely rounded to a 1/2&quot; (12.7mm) radius.</li>
+              <li>Ruled book lines: 1/4&quot; (6.4mm).</li>
+              <li>
+                Sketch and note book dimensions are 4-3/4&quot; × 7-1/2&quot;
+                (121mm × 191mm).
+              </li>
+              <li>
+                <strong>FIELD NOTES</strong> uses only the Futura typeface
+                family (Paul Renner, 1927), in collaboration with Monotype.
+              </li>
+              <li>
+                All <strong>FIELD NOTES</strong> memo books are printed and
+                manufactured in the U.S.A.
+              </li>
+              <li>Limited Edition of 25,000 2-Packs.</li>
+              <li>
+                SKU &amp; UPC: Harvest Moon 2-Pack FNC-72 850032279543, Lucky
+                Subscription FN-SUB70
+              </li>
+            </ol>
+          </section>
+        </div>
       </article>
-
-      <div id="productInformation">
-        <section id="description">
-          <div id="para1" class="descriptionPara">
-            <h2>RISING</h2>
-            <p>
-              Our 72nd quarterly edition for the Fall of 2026 is “Hunter’s
-              Moon,” named for the first full moon after the harvest. Known for
-              the bright and warm light it casts on newly gleaned fields, the
-              appearance of the Hunter’s Moon serves as a mindful call to
-              prepare for the quieter months ahead. Light a candle and fill the
-              pages of this 2-Pack, that includes a journal and sketchbook, with
-              your autumnal words and images.
-            </p>
-            <img
-              src="images/hunters-moon-studio.png"
-              alt="An artist working at a desk beside a studio window"
-            />
-          </div>
-          <div id="para2" class="descriptionPara">
-            <h3>BETWEEN MEMORIES AND THOUGHTS</h3>
-            <p>
-              Inspired in part by Ted Kooser’s lovely poem, “Abandoned House,”
-              artist Laura Weiler created the dream-like artwork for the covers
-              using a unique gel plate method of monoprinting, layering collaged
-              images, inks, and paints that are pressed and then transferred to
-              paper. We visited her home studio in Kalamazoo, Michigan to learn
-              more about her inspiration and process and to capture the creation
-              of the fall cover art.
-            </p>
-            <img
-              src="images/hunters-moon-covers.png"
-              alt="Two unfolded Hunter’s Moon covers showing architectural and chair illustrations"
-            />
-          </div>
-          <div id="para3" class="descriptionPara">
-            <h3>VISIONS INTERPRETED</h3>
-            <p>
-              Split evenly across the two large (4.75&quot; × 7.5&quot;) books,
-              Weiler’s artwork is reproduced on sturdy 100#C Mohawk Superfine
-              stock. The inside covers contain custom practical applications and
-              all the information you need to know about dreams, consciousness,
-              and memories.
-            </p>
-            <img
-              class="detailImage"
-              src="images/hunters-moon-paper.png"
-              alt="Warm white notebook pages with fine ochre ruling"
-              loading="lazy"
-            />
-          </div>
-          <div id="para4" class="descriptionPara">
-            <p>
-              Three black staples bind 48 pages of Mohawk Superfine “Warm White”
-              70#T, an excellent premium paper that is ideal for writing and
-              artwork across a variety of media. One book is ruled with light
-              ochre lines for journaling and the other is blank for sketching.
-            </p>
-            <img
-              class="buttonsImage"
-              src="images/hunters-moon-buttons.png"
-              alt="Three illustrated pinback buttons with bird and moon designs"
-              loading="lazy"
-            />
-          </div>
-          <div id="para5" class="descriptionPara">
-            <h3>TO EVERY SEASON</h3>
-            <p>
-              Start a year-long subscription with “Hunter’s Moon” and receive
-              two 2-packs plus a set of three 1&quot; buttons. Pin them onto
-              your favorite denim jacket, tote bag, or pencil pouch.
-            </p>
-            <p>
-              Subscribers will receive their first shipment in our special 2026
-              Subscriber Box by artist Jennifer Farrell of Starshaped Press.
-              Then get multiple sets of the Winter, Spring, and Summer (Our
-              75th!) editions, with free USA shipping and exclusive bonus items,
-              as they are released. Remember, subscribers also automagically
-              save 10% when shopping on our site. More information on
-              subscriptions here.
-            </p>
-          </div>
-        </section>
-
-        <section id="specifications">
-          <h3>SPECIFICATIONS:</h3>
-          <ol>
-            <li>Ethereal artwork by Laura Weiler, cutandplaced.com</li>
-            <li>
-              Proudly printed by the good people of Classic Color, Broadview,
-              Ill.
-            </li>
-            <li>
-              Cover: Mohawk Via Vellum 100#C “Warm White,” with a four-color
-              application of soy-based inks.
-            </li>
-            <li>
-              Innards: Mohawk Via Vellum 70#T “Warm White,” with a fine,
-              one-color application of “Moonlit Rust” soy-based Superior ink.
-            </li>
-            <li>
-              Cover and innards printed on a Komori Lithrone G40&quot; six-color
-              printing press.
-            </li>
-            <li>
-              Bound with a Muller Martini Presto II saddle stitcher with
-              appreciation to Slocum, McGill, and Brown, the “Founding Fathers
-              of the Staple.”
-            </li>
-            <li>Corners precisely rounded to a 1/2&quot; (12.7mm) radius.</li>
-            <li>Ruled book lines: 1/4&quot; (6.4mm).</li>
-            <li>
-              Sketch and note book dimensions are 4-3/4&quot; × 7-1/2&quot;
-              (121mm × 191mm).
-            </li>
-            <li>
-              <strong>FIELD NOTES</strong> uses only the Futura typeface family
-              (Paul Renner, 1927), in collaboration with Monotype.
-            </li>
-            <li>
-              All <strong>FIELD NOTES</strong> memo books are printed and
-              manufactured in the U.S.A.
-            </li>
-            <li>Limited Edition of 25,000 2-Packs.</li>
-            <li>
-              SKU &amp; UPC: Harvest Moon 2-Pack FNC-72 850032279543, Lucky
-              Subscription FN-SUB70
-            </li>
-          </ol>
-        </section>
-      </div>
     </main>
 
     <footer>
