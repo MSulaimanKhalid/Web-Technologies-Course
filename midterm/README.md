@@ -1,47 +1,38 @@
-# Field Notes — E-commerce Course Project
+# Midterm Submission
 
-This course project recreates selected pages of the Field Notes website using HTML, CSS, and JavaScript.
+- **Name:** Muhammad Sulaiman Khalid
+- **Roll Number:** FS24-BCS-079
+- **Parameters / Values:**
+  - N: 79
+  - BP: 679 (Calculated as 600 + N = 600 + 79 = 679px)
+  - H: 193
+  - Accent Color: hsl(193, 70%, 45%)
+  - K: 4 (Calculated as (79 mod 5) + 1 = 4)
 
-## Original website
+## Modified Files
 
-- **Site name:** Field Notes
-- **Official website:** https://fieldnotesbrand.com/
-- **Hunter’s Moon product page:** https://fieldnotesbrand.com/products/hunters-moon
+- `index.html`
+- `homePageStyles.css`
+- `product.html`
+- `productPageStyles.css`
+- `homePage.js`
+- `script.js`
+- `README.md`
 
-## Reference screenshots
+## Task Summaries
 
-These screenshots show the original Field Notes website, not the course-project implementation. Captured on October 26, 2026, in a desktop browser.
+### Task 1
 
-### Home page
+Applied custom CSS CSS variables including `--accent-color: hsl(193, 70%, 45%)` and set up mobile-first responsive grid layouts using breakpoint `679px`. Standardized product filter controls using CSS sibling combinators (`~`) and `:not()` selectors to filter products directly via pure CSS without leaving blank grid gaps.
 
-Homepage header and featured products.
+### Task 2
 
-![Original Field Notes home page](screenshots/field-notes-home.jpg)
+Implemented a mobile-first 2-column layout using `grid-template-areas` for the product page (`product.html` & `productPageStyles.css`). Applied sticky positioning to the product details section at `top: 109px` (calculated as `(79 mod 40) + 70 = 109px`) at viewports $\ge 679\text{px}$.
 
-### Home page — product listings
+### Task 3
 
-Product filters and the visible product-card grid.
+Enhanced JavaScript interactivity across `homePage.js` and `script.js`. Added price badge highlighting for premium products exceeding threshold price `7,900` (`N * 100`), integrated dynamic client-side title/price searching, price sorting (ascending/descending), and conditional "no products found" display logic.
 
-![Original Field Notes product listings](screenshots/field-notes-products.jpg)
+## AI Tools Used
 
-### Footer
-
-Homepage footer with navigation, newsletter signup, and copyright information.
-
-![Original Field Notes footer](screenshots/field-notes-footer.jpg)
-
-### Hunter’s Moon product page — landing view
-
-Initial page view with the header and Hunter’s Moon cover.
-
-![Original Hunter’s Moon landing view](screenshots/field-notes-hunters-moon-landing.jpg)
-
-### Hunter’s Moon product page — details
-
-Product details, options, quantity control, and introductory description.
-
-![Original Field Notes Hunter’s Moon product page](screenshots/field-notes-hunters-moon.jpg)
-
-## Attribution
-
-This is an educational project and is not affiliated with Field Notes. The original branding, website design, product imagery, and content belong to their respective owners.
+- ChatGpt

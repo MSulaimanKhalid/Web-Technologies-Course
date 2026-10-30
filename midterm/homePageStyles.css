@@ -545,6 +545,54 @@ header {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* TASK 3: Hide products that do not match the search. */
+#productsList .productCard.search-hidden {
+  display: none;
+}
+
+/* Let JavaScript hide the grid and the no-results message. */
+#productsList[hidden],
+#noProductsMessage[hidden] {
+  display: none;
+}
+
+/* Sort button above the grid. */
+#sortBar {
+  padding: 0 16px 12px;
+  text-align: right;
+}
+
+#sortPriceButton {
+  max-width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  background: white;
+  color: #303030;
+  cursor: pointer;
+}
+
+#sortPriceButton:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* Message displayed when neither filter combination matches. */
+#noProductsMessage {
+  padding: 40px 16px;
+  text-align: center;
+}
+
+/* Label added by JavaScript to products above Rs. 7,900. */
+.premiumLabel {
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--accent-color);
+  color: #102329;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
 /* TASK 1: Exactly 679px enters this layout: search then four filter controls. */
 @media (min-width: 679px) {
   #filtersBar {

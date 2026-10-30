@@ -25,6 +25,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="homePageStyles.css" />
+    <!-- TASK 3: Define the tools before the existing loader calls them. -->
+    <script src="./script.js" defer></script>
     <script src="./homePage.js" defer></script>
   </head>
 
@@ -235,6 +237,7 @@
             <input
               type="text"
               id="searchInput"
+              aria-label="Search products by name"
               placeholder="search for a product..."
             />
             <button id="searchButton">
@@ -250,6 +253,8 @@
             data-bs-placeholder="Products"
           >
             <span>Products</span>
+            <!-- TASK 3: Bootstrap needs this span; keep the visible label fixed. -->
+            <span class="combobox-value" hidden></span>
             <svg
               class="combobox-caret"
               width="10"
@@ -323,6 +328,8 @@
             data-bs-placeholder="Paper Styles"
           >
             <span>Paper Styles</span>
+            <!-- TASK 3: Bootstrap needs this span; keep the visible label fixed. -->
+            <span class="combobox-value" hidden></span>
             <svg
               class="combobox-caret"
               width="10"
@@ -376,6 +383,8 @@
             data-bs-placeholder="Paper Sizes"
           >
             <span>Paper Sizes</span>
+            <!-- TASK 3: Bootstrap needs this span; keep the visible label fixed. -->
+            <span class="combobox-value" hidden></span>
             <svg
               class="combobox-caret"
               width="10"
@@ -435,6 +444,11 @@
           </div>
         </section>
 
+        <!-- TASK 3: Separate row keeps the five existing filter controls uncluttered. -->
+        <div id="sortBar">
+          <button id="sortPriceButton" type="button">Sort by price</button>
+        </div>
+        <p id="noProductsMessage" role="status" hidden>No products found</p>
         <section id="productsList" aria-label="Products"></section>
       </div>
       <!-- TASK 1: end shared sibling container -->

@@ -36,7 +36,7 @@ async function loadProducts() {
       const clone = template.content.cloneNode(true);
 
       // TASK 1: Copy the JSON category onto the card for CSS attribute selectors.
-      // This only labels the card; CSS handles every filter selection (no listeners).
+      // This only labels the card; CSS handles category visibility.
       const card = clone.querySelector(".productCard");
       card.dataset.category = product.category;
 
@@ -50,6 +50,9 @@ async function loadProducts() {
 
       container.append(clone);
     }
+
+    // TASK 3: Cards now exist in the DOM, so search, sort and badges can start.
+    initializeProductTools();
   } catch (error) {
     console.error("Error loading products:", error);
     container.textContent = "Unable to load products.";
