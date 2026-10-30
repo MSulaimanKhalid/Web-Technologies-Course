@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flied Notes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+      crossorigin="anonymous"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="homePageStyles.css" />
+    <script src="./homePage.js" defer></script>
+  </head>
+
+  <body>
+    <dialog
+      id="loginDrawer"
+      class="drawer drawer-top"
+      aria-labelledby="loginDrawerHeading"
+    >
+      <h2 id="loginDrawerHeading">LOG IN TO YOUR ACCOUNT</h2>
+      <input type="email" id="loginEmailInput" placeholder="Enter Your Email" />
+      <input
+        type="password"
+        id="loginPasswordInput"
+        placeholder="Enter Your Password"
+      />
+      <button id="loginSubmitButton">LOG IN</button>
+      <p><a href="#">Forgot Password?</a> / <a href="#">Create Account</a></p>
+    </dialog>
+
+    <dialog
+      id="newsLetterDrawer"
+      class="drawer drawer-top"
+      aria-labelledby="newsLetterDrawerHeading"
+    >
+      <h2 id="newsLetterDrawerHeading">THE LIST</h2>
+      <p>
+        Email list subscribers get early notice on offers and new releases,
+        including Quarterly Editions.
+      </p>
+      <input
+        type="email"
+        id="newsletterInput2"
+        placeholder="Your Email Address"
+      />
+      <button id="newsletterEnrollmentButton2">
+        <img src="images/right-arrow-white.svg" alt="EnRoll" />
+      </button>
+      <p id="newsLetterDrawerSlogan">
+        WE'LL NEVER SHARE YOUR DATA, AND WE DO NOT EMAIL OFTEN.
+      </p>
+    </dialog>
+
+    <dialog id="drawer" class="drawer drawer-end">
+      <button
+        id="loginBtn"
+        type="button"
+        data-bs-toggle="drawer"
+        data-bs-target="#loginDrawer"
+        aria-controls="loginDrawer"
+      >
+        Log In
+      </button>
+      <button id="signupBtn">Sign Up</button>
+
+      <nav>
+        <button>PRODUCTS</button>
+        <button>LIMITED EDITIONS</button>
+        <button>DISPATCHES</button>
+        <button>OUR STORY</button>
+        <button>FILMS</button>
+        <button>RETAIL LOCATIONS</button>
+        <button>CUSTOMIZATION</button>
+        <button>WHOLESALE</button>
+        <button>AFFILIATES</button>
+        <button>FAQ</button>
+        <button>CONTACT</button>
+      </nav>
+
+      <button
+        id="newsletterBtn"
+        type="button"
+        data-bs-toggle="drawer"
+        data-bs-target="#newsLetterDrawer"
+        aria-controls="newsLetterDrawer"
+      >
+        <img src="images/newsletter-white.svg" alt="NewsLetter" />
+      </button>
+    </dialog>
+
+    <header>
+      <button id="cartBtn">
+        <img src="images/cart.svg" alt="cart icon" />
+      </button>
+
+      <a id="logo">
+        <img src="images/field-notes-logo.svg" alt="logo" />
+      </a>
+
+      <button
+        id="drawerBtn"
+        type="button"
+        data-bs-toggle="drawer"
+        data-bs-target="#drawer"
+        aria-controls="drawer"
+      >
+        <img src="images/hamburger.svg" alt="drawer icon" />
+      </button>
+    </header>
+
+    <article id="createAccountScreen">
+      <h2>CREATE AN ACCOUNT</h2>
+      <p>
+        Creating an account allows you to checkout quickly, save addresses, and
+        keep track of your orders.
+      </p>
+      <h3>ENTER YOUR DETAILS</h3>
+      <label for="firstNameInput">First Name</label>
+      <input
+        type="text"
+        id="firstNameInput"
+        placeholder="Enter your first name"
+      />
+      <label for="lastNameInput">Last Name</label>
+      <input
+        type="text"
+        id="lastNameInput"
+        placeholder="Enter your last name"
+      />
+      <label for="emailInputCreateAccount">Email</label>
+      <input
+        type="email"
+        id="emailInputCreateAccount"
+        placeholder="memo@fieldnotesbrand.com"
+      />
+      <label for="passwordInputCreateAccount">Password</label>
+      <input
+        type="password"
+        id="passwordInputCreateAccount"
+        placeholder="Create a password"
+      />
+      <button id="createAccountSubmitButton">CREATE ACCOUNT</button>
+    </article>
+
+    <main>
+      <section id="featuredItems"></section>
+
+      <template id="featuredProductTemplate">
+        <article class="featuredCard">
+          <h2 class="featuredTitle"></h2>
+
+          <p class="featuredDescription"></p>
+
+          <button class="featuredButton" type="button"></button>
+        </article>
+      </template>
+
+      <section id="filtersBar">
+        <div id="searchInputDiv">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="search for a product..."
+          />
+          <button id="searchButton">
+            <img src="images/search.svg" alt="search icon" />
+          </button>
+        </div>
+
+        <button
+          id="productsFilter"
+          type="button"
+          class="form-control combobox-toggle"
+          data-bs-toggle="combobox"
+          data-bs-placeholder="Products"
+        >
+          <span>Products</span>
+          <svg
+            class="combobox-caret"
+            width="10"
+            height="16"
+            viewBox="0 0 10 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z"
+              fill="currentcolor"
+            />
+          </svg>
+        </button>
+        <div id="productsSelectList" class="menu">
+          <button class="menu-item" type="button" data-bs-value="all-products">
+            ALL PRODUCTS
+          </button>
+          <button
+            class="menu-item"
+            type="button"
+            data-bs-value="seasonal-editions"
+          >
+            SEASONAL EDITIONS
+          </button>
+          <button class="menu-item" type="button" data-bs-value="memo-books">
+            MEMO BOOKS
+          </button>
+          <button
+            class="menu-item"
+            type="button"
+            data-bs-value="pens-and-pencils"
+          >
+            PENS AND PENCILS
+          </button>
+          <button
+            class="menu-item"
+            type="button"
+            data-bs-value="planners-and-calendars"
+          >
+            PLANNERS AND CALENDARS
+          </button>
+          <button
+            class="menu-item"
+            type="button"
+            data-bs-value="leather-covers"
+          >
+            LEATHER COVERS
+          </button>
+          <button class="menu-item" type="button" data-bs-value="press-sheets">
+            PRESS SHEETS
+          </button>
+          <button class="menu-item" type="button" data-bs-value="kits">
+            KITS
+          </button>
+        </div>
+
+        <button
+          id="paperStylesFilter"
+          type="button"
+          class="form-control combobox-toggle"
+          data-bs-toggle="combobox"
+          data-bs-placeholder="Paper Styles"
+        >
+          <span>Paper Styles</span>
+          <svg
+            class="combobox-caret"
+            width="10"
+            height="16"
+            viewBox="0 0 10 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z"
+              fill="currentcolor"
+            />
+          </svg>
+        </button>
+        <div id="paperStyleList" class="menu">
+          <button
+            class="menu-item"
+            type="button"
+            data-bs-value="all-paper-styles"
+          >
+            ALL PAPER STYLES
+          </button>
+          <button class="menu-item" type="button" data-bs-value="graph">
+            GRAPH
+          </button>
+          <button class="menu-item" type="button" data-bs-value="ruled">
+            RULED
+          </button>
+          <button class="menu-item" type="button" data-bs-value="plain">
+            PLAIN
+          </button>
+          <button class="menu-item" type="button" data-bs-value="dot-graph">
+            DOT-GRAPH
+          </button>
+          <button class="menu-item" type="button" data-bs-value="ledger">
+            LEDGER
+          </button>
+          <button class="menu-item" type="button" data-bs-value="checklist">
+            CHECKLIST
+          </button>
+          <button class="menu-item" type="button" data-bs-value="planner">
+            PLANNER
+          </button>
+        </div>
+
+        <button
+          id="paperSizesFilter"
+          type="button"
+          class="form-control combobox-toggle"
+          data-bs-toggle="combobox"
+          data-bs-placeholder="Paper Sizes"
+        >
+          <span>Paper Sizes</span>
+          <svg
+            class="combobox-caret"
+            width="10"
+            height="16"
+            viewBox="0 0 10 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z"
+              fill="currentcolor"
+            />
+          </svg>
+        </button>
+        <div id="paperSizeList" class="menu">
+          <button class="menu-item" type="button" data-bs-value="all-sizes">
+            ALL SIZES
+          </button>
+          <button class="menu-item" type="button" data-bs-value="3.5x5.5">
+            3.5×5.5" (89×140 mm)
+          </button>
+          <button class="menu-item" type="button" data-bs-value="3.75x8">
+            3.75×8" (95×203 mm)
+          </button>
+          <button class="menu-item" type="button" data-bs-value="4.25x6.5">
+            4.25×6.5" (108×165 mm)
+          </button>
+          <button class="menu-item" type="button" data-bs-value="4.75x7.5">
+            4.75×7.5" (120×190 mm)
+          </button>
+          <button class="menu-item" type="button" data-bs-value="6x8">
+            6×8" (152×203 mm)
+          </button>
+          <button class="menu-item" type="button" data-bs-value="6x9">
+            6×9" (152×228 mm)
+          </button>
+        </div>
+      </section>
+
+      <section id="productsList"></section>
+
+      <template id="productCardTemplate">
+        <article class="productCard">
+          <img class="productImage" alt="" />
+
+          <h3 class="productTitle"></h3>
+
+          <p class="productPrice"></p>
+        </article>
+      </template>
+    </main>
+
+    <footer>
+      <section id="logoSection">
+        <a id="footerLogo">
+          <img src="images/field-notes-logo.svg" alt="logo" />
+        </a>
+        <p>
+          "I'm not writing it down to remember it later, I'm writing it down to
+          remember it now."
+        </p>
+      </section>
+      <section id="linksSection">
+        <section id="navSection">
+          <div id="navSectionDiv1">
+            <ul>
+              <li><a>PRODUCTS</a></li>
+              <li><a>LIMITED EDITIONS</a></li>
+              <li><a>DISPATCHES</a></li>
+              <li><a>OUR STORY</a></li>
+            </ul>
+          </div>
+          <div id="navSectionDiv2">
+            <ul>
+              <li><a>FILMS</a></li>
+              <li><a>RETAIL LOCATIONS</a></li>
+              <li><a>CUSTOMIZATION</a></li>
+              <li><a>WHOLESALE</a></li>
+            </ul>
+          </div>
+          <div id="navSectionDiv3">
+            <ul>
+              <li><a>AFFILIATES</a></li>
+              <li><a>FAQ</a></li>
+              <li><a>CONTACT</a></li>
+            </ul>
+          </div>
+        </section>
+        <section id="shopCategoriesSection">
+          <p>SHOP</p>
+          <div id="shopCategoriesSectionDiv1">
+            <ul>
+              <li><a>FULL PRODUCT LINE</a></li>
+              <li><a>COVERS & STORAGE</a></li>
+            </ul>
+          </div>
+          <div id="shopCategoriesSectionDiv2">
+            <ul>
+              <li><a>MEMO BOOKS</a></li>
+              <li><a>PLANNERS</a></li>
+            </ul>
+          </div>
+          <div id="shopCategoriesSectionDiv3">
+            <ul>
+              <li><a>PENS & PENCILS</a></li>
+              <li><a>PRESS SHEETS</a></li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section id="newsletterSection">
+        <p>THE LIST</p>
+        <p>
+          Email list subscribers get early notice on offers and new releases,
+          including Quarterly Editions.
+        </p>
+        <input
+          type="email"
+          id="newsletterInput1"
+          placeholder="Your Email Address"
+        />
+        <button id="newsletterEnrollmentButton1">
+          <img src="images/arrow-right.svg" alt="EnRoll" />
+        </button>
+      </section>
+    </footer>
+  </body>
+</html>

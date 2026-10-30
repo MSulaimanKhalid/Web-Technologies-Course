@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hunter's Moon</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+      crossorigin="anonymous"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="productPageStyles.css" />
+  </head>
+
+  <body>
+    <dialog
+      id="loginDrawer"
+      class="drawer drawer-top"
+      aria-labelledby="loginDrawerHeading"
+    >
+      <h2 id="loginDrawerHeading">LOG IN TO YOUR ACCOUNT</h2>
+      <input type="email" id="loginEmailInput" placeholder="Enter Your Email" />
+      <input
+        type="password"
+        id="loginPasswordInput"
+        placeholder="Enter Your Password"
+      />
+      <button id="loginSubmitButton">LOG IN</button>
+      <p><a href="#">Forgot Password?</a> / <a href="#">Create Account</a></p>
+    </dialog>
+
+    <dialog
+      id="newsLetterDrawer"
+      class="drawer drawer-top"
+      aria-labelledby="newsLetterDrawerHeading"
+    >
+      <h2 id="newsLetterDrawerHeading">THE LIST</h2>
+      <p>
+        Email list subscribers get early notice on offers and new releases,
+        including Quarterly Editions.
+      </p>
+      <input
+        type="email"
+        id="newsletterInput2"
+        placeholder="Your Email Address"
+      />
+      <button id="newsletterEnrollmentButton2">
+        <img src="images/right-arrow-white.svg" alt="EnRoll" />
+      </button>
+      <p id="newsLetterDrawerSlogan">
+        WE'LL NEVER SHARE YOUR DATA, AND WE DO NOT EMAIL OFTEN.
+      </p>
+    </dialog>
+
+    <dialog id="drawer" class="drawer drawer-end">
+      <button
+        id="loginBtn"
+        type="button"
+        data-bs-toggle="drawer"
+        data-bs-target="#loginDrawer"
+        aria-controls="loginDrawer"
+      >
+        Log In
+      </button>
+      <button id="signupBtn">Sign Up</button>
+
+      <nav>
+        <button>PRODUCTS</button>
+        <button>LIMITED EDITIONS</button>
+        <button>DISPATCHES</button>
+        <button>OUR STORY</button>
+        <button>FILMS</button>
+        <button>RETAIL LOCATIONS</button>
+        <button>CUSTOMIZATION</button>
+        <button>WHOLESALE</button>
+        <button>AFFILIATES</button>
+        <button>FAQ</button>
+        <button>CONTACT</button>
+      </nav>
+
+      <button
+        id="newsletterBtn"
+        type="button"
+        data-bs-toggle="drawer"
+        data-bs-target="#newsLetterDrawer"
+        aria-controls="newsLetterDrawer"
+      >
+        <img src="images/newsletter-white.svg" alt="NewsLetter" />
+      </button>
+    </dialog>
+
+    <header>
+      <button id="cartBtn">
+        <img src="images/cart.svg" alt="cart icon" />
+      </button>
+
+      <a id="logo">
+        <img src="images/field-notes-logo.svg" alt="logo" />
+      </a>
+
+      <button
+        id="drawerBtn"
+        type="button"
+        data-bs-toggle="drawer"
+        data-bs-target="#drawer"
+        aria-controls="drawer"
+      >
+        <img src="images/hamburger.svg" alt="drawer icon" />
+      </button>
+    </header>
+
+    <main>
+      <section id="coverImage">
+        <img
+          src="images/hunters-moon-cover.png"
+          alt="An artist painting ochre details onto architectural artwork"
+        />
+        <div class="coverText">
+          <p>FNC-72 FALL LIMITED EDITION</p>
+          <h1>“HUNTER’S<br />MOON”</h1>
+          <p class="coverSubtitle">A Journal and a Sketchbook</p>
+        </div>
+      </section>
+
+      <article id="productCard">
+        <img
+          id="productImage"
+          src="images/product-hunters-moon.png"
+          alt="Hunter’s Moon notebook with an illustrated cream, gray and ochre cover"
+        />
+        <section id="productDetails">
+          <p class="productEdition">FALL 2026 QUARTERLY EDITION</p>
+          <h2>HUNTER’S MOON</h2>
+          <p class="productPacks">2-PACKS</p>
+          <hr />
+          <p class="productInfo">
+            4¾&quot; × 7½&quot; · Sketch &amp; Ruled Paper · 48 Pages
+          </p>
+          <p class="productPrice">Rs. 1495</p>
+
+          <div class="productOptions">
+            <button
+              id="productOption"
+              class="form-control combobox-toggle"
+              type="button"
+              data-bs-toggle="combobox"
+              data-bs-name="product-option"
+              data-bs-placeholder="Choose an Option …"
+              aria-label="Choose a product option"
+            >
+              <span class="combobox-value">Choose an Option …</span>
+              <svg
+                class="combobox-caret"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="m2 4 4 4 4-4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </button>
+            <div class="menu">
+              <button
+                class="menu-item"
+                type="button"
+                data-bs-value="hunters-moon-2-pack"
+              >
+                Hunter’s Moon 2-Pack
+              </button>
+              <button
+                class="menu-item"
+                type="button"
+                data-bs-value="year-long-subscription"
+              >
+                Year-Long Subscription
+              </button>
+            </div>
+          </div>
+
+          <div class="purchaseControls">
+            <div class="quantityControl">
+              <label for="quantityInput">QTY</label>
+              <input
+                id="quantityInput"
+                name="quantity"
+                type="number"
+                min="1"
+                step="1"
+                value="1"
+              />
+            </div>
+            <button id="addToCartButton" type="button">ADD TO CART</button>
+          </div>
+        </section>
+      </article>
+
+      <div id="productInformation">
+        <section id="description">
+          <div id="para1" class="descriptionPara">
+            <h2>RISING</h2>
+            <p>
+              Our 72nd quarterly edition for the Fall of 2026 is “Hunter’s
+              Moon,” named for the first full moon after the harvest. Known for
+              the bright and warm light it casts on newly gleaned fields, the
+              appearance of the Hunter’s Moon serves as a mindful call to
+              prepare for the quieter months ahead. Light a candle and fill the
+              pages of this 2-Pack, that includes a journal and sketchbook, with
+              your autumnal words and images.
+            </p>
+            <img
+              src="images/hunters-moon-studio.png"
+              alt="An artist working at a desk beside a studio window"
+            />
+          </div>
+          <div id="para2" class="descriptionPara">
+            <h3>BETWEEN MEMORIES AND THOUGHTS</h3>
+            <p>
+              Inspired in part by Ted Kooser’s lovely poem, “Abandoned House,”
+              artist Laura Weiler created the dream-like artwork for the covers
+              using a unique gel plate method of monoprinting, layering collaged
+              images, inks, and paints that are pressed and then transferred to
+              paper. We visited her home studio in Kalamazoo, Michigan to learn
+              more about her inspiration and process and to capture the creation
+              of the fall cover art.
+            </p>
+            <img
+              src="images/hunters-moon-covers.png"
+              alt="Two unfolded Hunter’s Moon covers showing architectural and chair illustrations"
+            />
+          </div>
+          <div id="para3" class="descriptionPara">
+            <h3>VISIONS INTERPRETED</h3>
+            <p>
+              Split evenly across the two large (4.75&quot; × 7.5&quot;) books,
+              Weiler’s artwork is reproduced on sturdy 100#C Mohawk Superfine
+              stock. The inside covers contain custom practical applications and
+              all the information you need to know about dreams, consciousness,
+              and memories.
+            </p>
+            <img
+              class="detailImage"
+              src="images/hunters-moon-paper.png"
+              alt="Warm white notebook pages with fine ochre ruling"
+              loading="lazy"
+            />
+          </div>
+          <div id="para4" class="descriptionPara">
+            <p>
+              Three black staples bind 48 pages of Mohawk Superfine “Warm White”
+              70#T, an excellent premium paper that is ideal for writing and
+              artwork across a variety of media. One book is ruled with light
+              ochre lines for journaling and the other is blank for sketching.
+            </p>
+            <img
+              class="buttonsImage"
+              src="images/hunters-moon-buttons.png"
+              alt="Three illustrated pinback buttons with bird and moon designs"
+              loading="lazy"
+            />
+          </div>
+          <div id="para5" class="descriptionPara">
+            <h3>TO EVERY SEASON</h3>
+            <p>
+              Start a year-long subscription with “Hunter’s Moon” and receive
+              two 2-packs plus a set of three 1&quot; buttons. Pin them onto
+              your favorite denim jacket, tote bag, or pencil pouch.
+            </p>
+            <p>
+              Subscribers will receive their first shipment in our special 2026
+              Subscriber Box by artist Jennifer Farrell of Starshaped Press.
+              Then get multiple sets of the Winter, Spring, and Summer (Our
+              75th!) editions, with free USA shipping and exclusive bonus items,
+              as they are released. Remember, subscribers also automagically
+              save 10% when shopping on our site. More information on
+              subscriptions here.
+            </p>
+          </div>
+        </section>
+
+        <section id="specifications">
+          <h3>SPECIFICATIONS:</h3>
+          <ol>
+            <li>Ethereal artwork by Laura Weiler, cutandplaced.com</li>
+            <li>
+              Proudly printed by the good people of Classic Color, Broadview,
+              Ill.
+            </li>
+            <li>
+              Cover: Mohawk Via Vellum 100#C “Warm White,” with a four-color
+              application of soy-based inks.
+            </li>
+            <li>
+              Innards: Mohawk Via Vellum 70#T “Warm White,” with a fine,
+              one-color application of “Moonlit Rust” soy-based Superior ink.
+            </li>
+            <li>
+              Cover and innards printed on a Komori Lithrone G40&quot; six-color
+              printing press.
+            </li>
+            <li>
+              Bound with a Muller Martini Presto II saddle stitcher with
+              appreciation to Slocum, McGill, and Brown, the “Founding Fathers
+              of the Staple.”
+            </li>
+            <li>Corners precisely rounded to a 1/2&quot; (12.7mm) radius.</li>
+            <li>Ruled book lines: 1/4&quot; (6.4mm).</li>
+            <li>
+              Sketch and note book dimensions are 4-3/4&quot; × 7-1/2&quot;
+              (121mm × 191mm).
+            </li>
+            <li>
+              <strong>FIELD NOTES</strong> uses only the Futura typeface family
+              (Paul Renner, 1927), in collaboration with Monotype.
+            </li>
+            <li>
+              All <strong>FIELD NOTES</strong> memo books are printed and
+              manufactured in the U.S.A.
+            </li>
+            <li>Limited Edition of 25,000 2-Packs.</li>
+            <li>
+              SKU &amp; UPC: Harvest Moon 2-Pack FNC-72 850032279543, Lucky
+              Subscription FN-SUB70
+            </li>
+          </ol>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <section id="logoSection">
+        <a id="footerLogo">
+          <img src="images/field-notes-logo.svg" alt="logo" />
+        </a>
+        <p>
+          "I'm not writing it down to remember it later, I'm writing it down to
+          remember it now."
+        </p>
+      </section>
+      <section id="linksSection">
+        <section id="navSection">
+          <div id="navSectionDiv1">
+            <ul>
+              <li><a>PRODUCTS</a></li>
+              <li><a>LIMITED EDITIONS</a></li>
+              <li><a>DISPATCHES</a></li>
+              <li><a>OUR STORY</a></li>
+            </ul>
+          </div>
+          <div id="navSectionDiv2">
+            <ul>
+              <li><a>FILMS</a></li>
+              <li><a>RETAIL LOCATIONS</a></li>
+              <li><a>CUSTOMIZATION</a></li>
+              <li><a>WHOLESALE</a></li>
+            </ul>
+          </div>
+          <div id="navSectionDiv3">
+            <ul>
+              <li><a>AFFILIATES</a></li>
+              <li><a>FAQ</a></li>
+              <li><a>CONTACT</a></li>
+            </ul>
+          </div>
+        </section>
+        <section id="shopCategoriesSection">
+          <p>SHOP</p>
+          <div id="shopCategoriesSectionDiv1">
+            <ul>
+              <li><a>FULL PRODUCT LINE</a></li>
+              <li><a>COVERS & STORAGE</a></li>
+            </ul>
+          </div>
+          <div id="shopCategoriesSectionDiv2">
+            <ul>
+              <li><a>MEMO BOOKS</a></li>
+              <li><a>PLANNERS</a></li>
+            </ul>
+          </div>
+          <div id="shopCategoriesSectionDiv3">
+            <ul>
+              <li><a>PENS & PENCILS</a></li>
+              <li><a>PRESS SHEETS</a></li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section id="newsletterSection">
+        <p>THE LIST</p>
+        <p>
+          Email list subscribers get early notice on offers and new releases,
+          including Quarterly Editions.
+        </p>
+        <input
+          type="email"
+          id="newsletterInput1"
+          placeholder="Your Email Address"
+        />
+        <button id="newsletterEnrollmentButton1">
+          <img src="images/arrow-right.svg" alt="EnRoll" />
+        </button>
+      </section>
+    </footer>
+  </body>
+</html>
